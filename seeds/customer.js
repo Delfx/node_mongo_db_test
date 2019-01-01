@@ -7,9 +7,9 @@ function seedcustomer() {
         if (err) throw err;
         var dbo = db.db("inventory");
         var myobj = [
-            {name: 'John'},
-            {name: 'Tim'},
-            {name: 'Luce'}
+            {_id: '1', name: 'John'},
+            {_id: '2', name: 'Tim'},
+            {_id: '3', name: 'Luce'}
         ];
         dbo.collection("customer").insertMany(myobj, function (err, res) {
             if (err) throw err;
@@ -25,9 +25,9 @@ function seedinvntory() {
         if (err) throw err;
         var dbo = db.db("inventory");
         var myobj = [
-            {products: 'XboxOne', quantity: 15, price: 200},
-            {products: 'Playstaion', quantity: 25, price: 250},
-            {products: 'Nintendo Switch', quantity: 35, price: 350}
+            {_id: '11',products: 'XboxOne', quantity: 15, price: 200},
+            {_id: '22',products: 'Playstaion', quantity: 25, price: 250},
+            {_id: '33',products: 'Nintendo Switch', quantity: 35, price: 350}
         ];
         dbo.collection("inventory").insertMany(myobj, function (err, res) {
             if (err) throw err;
@@ -86,8 +86,8 @@ function seedOrder() {
         if (err) throw err;
         var dbo = db.db("inventory");
         var myobj = [
-            {customer_id: "5c1b855b608e0f418e168e96", item_id: "5c1bcdbd41f66706b00b3f0e"},
-            {customer_id: "5c1b855b608e0f418e168e97", item_id: ["5c1bcdbd41f66706b00b3f10", "5c1bcf3043c06606ed709393"]} 
+            {customer_id: "1", item_id: "11"},
+            {customer_id: "2", item_id: ["22", "33"]} 
         ];
         dbo.collection("order").insertMany(myobj, function (err, res) {
             if (err) throw err;
@@ -99,4 +99,5 @@ function seedOrder() {
 
 
 seedOrder();
-
+seedcustomer();
+seedinvntory();
