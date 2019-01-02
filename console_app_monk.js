@@ -23,7 +23,11 @@ const users = db.get('customer')
 
 var log = users.findOne({name: 'Tim'}).then((doc) => {})
 
-console.log(log);
+
+
+log.then(function(result) {
+  console.log(result) //will log results.
+})
 
 // db.close();
 
