@@ -86,7 +86,7 @@ function seedOrder() {
         if (err) throw err;
         var dbo = db.db("inventory");
         var myobj = [
-            {customer_id: "1", item_id: "11"},
+            {customer_id: "1", item_id: ["11"]},
             {customer_id: "2", item_id: ["22", "33"]} 
         ];
         dbo.collection("order").insertMany(myobj, function (err, res) {
