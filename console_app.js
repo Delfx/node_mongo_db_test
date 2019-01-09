@@ -3,19 +3,19 @@
  */
 /////////////////////// LIBRARIES ////////////////////
 const commandLineArgs = require('command-line-args')
-var MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
 
 
 /////////////////////// GLOBAL VARS //////////////////
 const optionDefinitions = [
     {name: 'customer', alias: 'c', type: String},
     {name: 'help', alias: 'h', type: Boolean}
-]
+];
 
 
-var url = "mongodb://localhost:27017/"
+const url = "mongodb://localhost:27017/";
 
-const options = commandLineArgs(optionDefinitions, {partial: true})
+const options = commandLineArgs(optionDefinitions, {partial: true});
 
 
 /////////////////////// HELPER FUNCTIONS //////////////////
@@ -52,7 +52,8 @@ function findOrderbyCustomerName(customerName) {
 if ('help' in options) {
     help()
 } else if ('customer' in options) {
-    findOrderbyCustomerName('Tim')
+    findOrderbyCustomerName(options['customer']);
+    // console.log(options);
 } else {
     help()
 }
