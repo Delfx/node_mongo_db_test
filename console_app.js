@@ -30,18 +30,18 @@ function findOrderbyCustomerName(customerName) {
 
     MongoClient.connect(url, {useNewUrlParser: true}, function (err, db) {
         if (err) throw err;
-        var dbo = db.db("inventory");
+        const dbo = db.db("inventory");
         dbo.collection("customer").findOne({name: customerName}, (err, result) => {
             const customerId = result._id;
-        dbo.collection("order").findOne({customer_id: customerId}, (err, order) => {
-            const orderId = order.item_id;
-        dbo.collection("inventory").find({_id: {$in: orderId}}).toArray((err, result) => {
-            if (err) throw err;
-        console.log(result);
-        db.close();
-    })
-    })
-    })
+            dbo.collection("order").findOne({customer_id: customerId}, (err, order) => {
+                const orderId = order.item_id;
+                dbo.collection("inventory").find({_id: {$in: orderId}}).toArray((err, result) => {
+                    if (err) throw err;
+                    console.log(result);
+                    db.close();
+                })
+            })
+        })
     });
 }
 
@@ -52,7 +52,7 @@ function findOrderbyCustomerName(customerName) {
 if ('help' in options) {
     help()
 } else if ('customer' in options) {
-    findOrderbyCustomerName('John')
+    findOrderbyCustomerName('Tim')
 } else {
     help()
 }
