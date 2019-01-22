@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Delfx/node_mongo_db_test#readme",
   "dependencies": {
     "command-line-args": "^5.0.2",
+    "express": "^4.16.4",
     "mongodb": "^3.1.12"
   }
 }
