@@ -1,0 +1,23 @@
+{
+  "name": "node_mongo_db_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "console_app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Delfx/node_mongo_db_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Delfx/node_mongo_db_test/issues"
+  },
+  "homepage": "https://github.com/Delfx/node_mongo_db_test#readme",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "mongodb": "^3.1.12"
+  }
+}
