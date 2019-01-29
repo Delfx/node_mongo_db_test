@@ -14,7 +14,11 @@ app.listen(3000, function() {
 
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World</h1>')
+    res.sendFile(__dirname + '/public/index.html')
+});
+
+app.post('/quotes', (req, res) => {
+    console.log('Hellooooooooooooooooo!')
 });
 
 

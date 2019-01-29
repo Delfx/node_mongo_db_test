@@ -20,5 +20,13 @@
     "command-line-args": "^5.0.2",
     "express": "^4.16.4",
     "mongodb": "^3.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "scripts": {
+    "dev": "nodemon service_app.js"
   }
 }
+
+
