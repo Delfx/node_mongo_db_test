@@ -4,7 +4,7 @@
   "description": "",
   "main": "console_app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon service_app.js"
   },
   "repository": {
     "type": "git",
@@ -17,16 +17,13 @@
   },
   "homepage": "https://github.com/Delfx/node_mongo_db_test#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "command-line-args": "^5.0.2",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mongodb": "^3.1.12"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
-  },
-  "scripts": {
-    "dev": "nodemon service_app.js"
   }
 }
-
-
