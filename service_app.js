@@ -22,7 +22,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 
 
-app.get('/findorder/:customerName', (req, res) => {
+app.get('/:customerName', (req, res) => {
   const customerName = req.query.customerName
   dbo.collection("customer").findOne({name: customerName}, (err, result) => {
     const customerId = result._id
@@ -38,7 +38,7 @@ app.get('/findorder/:customerName', (req, res) => {
 })
 
 
-app.get('/findorder', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html')
 })
 
